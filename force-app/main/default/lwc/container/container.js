@@ -1,40 +1,62 @@
 import { LightningElement, api } from 'lwc';
 
 export default class Container extends LightningElement {
-    speechQueues = [];
+    assertiveQueue = [];
+    alertQueue = [];
+    statusQueue = [];
+    politeQueue = [];
 
-    connectedCallback() {
-        this.speechQueues.push({
-          queue: [],
-          liveRegion: 'alertRegion'
-        });
-        this.speechQueues.push({
-          queue: [],
-          liveRegion: 'assertiveRegion'
-        });
-        this.speechQueues.push({
-          queue: [],
-          liveRegion: 'politeRegion'
-        });
-        this.speechQueues.push({
-          queue: [],
-          liveRegion: 'statusRegion'
-        });
-    }  // End init method
+    // speechQueues = [
+    //     {
+    //         liveRegion: 'alert',
+    //         queue: []
+    //     },
+    //     {
+    //         liveRegion: 'status',
+    //         queue: []
+    //     },
+    //     {
+    //         liveRegion: 'assertive',
+    //         queue: []
+    //     },
+    //     {
+    //         liveRegion: 'polite',
+    //         queue: []
+    //     }
+    // ];
+
+    // connectedCallback() {
+    //     this.speechQueues.push({
+    //       queue: [],
+    //       liveRegion: 'alertRegion'
+    //     });
+    //     this.speechQueues.push({
+    //       queue: [],
+    //       liveRegion: 'assertiveRegion'
+    //     });
+    //     this.speechQueues.push({
+    //       queue: [],
+    //       liveRegion: 'politeRegion'
+    //     });
+    //     this.speechQueues.push({
+    //       queue: [],
+    //       liveRegion: 'statusRegion'
+    //     });
+    // }  // End init method
 
     determineType(type) {
         switch(type) {
         case 'assertive':
-            return this.speechQueues[1].queue;
+            return this.assertiveQueue;
             break;
         case 'polite':
-            return this.speechQueues[2].queue;
+            return this.politeQueue;
             break;
         case 'alert':
-            return this.speechQueues[0].queue;
+            return this.alertQueue;
             break;
         default:
-            return this.speechQueues[3].queue;
+            return this.statusQueue;
         }  // End switch
     }  // End determineType method
 

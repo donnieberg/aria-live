@@ -1,5 +1,11 @@
 <template>
     <h1>Container Heading</h1>
     <c-input onlimit={addToQueue}></c-input>
-    <c-live-region parentQueue={speechQueues}></c-live-region>
+    <c-live-region 
+        assertive={assertiveQueue}
+        alert={alertQueue}
+        status={statusQueue}
+        polite={politeQueue}
+    >
+    </c-live-region>
 </template>
