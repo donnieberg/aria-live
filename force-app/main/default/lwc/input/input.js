@@ -13,7 +13,8 @@ export default class Input extends LightningElement {
         const event = new CustomEvent('limit', {
           detail: {
             id: 'test1',
-            type: 'error',
+            type: 'assertive',
+            duration: 1,
             message: this.limitErrorMessage
           }
         });
