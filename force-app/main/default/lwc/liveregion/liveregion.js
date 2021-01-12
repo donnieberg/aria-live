@@ -1,6 +1,6 @@
 import { LightningElement, api } from 'lwc';
 
-export default class AriaLive extends LightningElement {
+export default class Liveregion extends LightningElement {
   @api assertive;
   @api alert;
   @api status;
