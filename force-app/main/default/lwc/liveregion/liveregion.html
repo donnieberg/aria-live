@@ -1,13 +1,8 @@
 <template>
+    <span>{announcements}</span>
+
     <span id="alertRegion" role="alert"></span>
     <span id="statusRegion" role="status"></span>
     <span id="politeRegion" aria-live="polite"></span>
     <span id="assertiveRegion" aria-live="assertive"></span>
-
-    <lightning-card title="HelloWorld" icon-name="custom:custom14">
-      <div class="slds-m-around_medium">
-        <p>Hello, {greeting}!</p>
-        <lightning-input label="Name" value={greeting} onchange={changeHandler}></lightning-input>
-      </div>
-    </lightning-card>
-  </template>
+</template>

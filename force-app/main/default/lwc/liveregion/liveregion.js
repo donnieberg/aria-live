@@ -1,8 +1,5 @@
-import { LightningElement } from 'lwc';
+import { LightningElement, api } from 'lwc';
 
-export default class AriaLive extends LightningElement {
-  greeting = '';
-  changeHandler(event) {
-    this.greeting = event.target.value;
-  }
+export default class LiveRegion extends LightningElement {
+    @api announcements;
 }
