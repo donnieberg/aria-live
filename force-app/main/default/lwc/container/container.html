@@ -16,7 +16,7 @@
             <tbody>
                 <tr>
                     <td>
-                        <span aria-live="assertive">{showAssertiveLatestMessage}</span>
+                        <span aria-live="assertive" aria-atomic="true">{showAssertiveLatestMessage}</span>
                     </td>
                     <td>
                         <span role="alert">{showAlertLatestMessage}</span>
@@ -31,4 +31,5 @@
             </tbody>
         </table>
     </div>
+    
 </template>
