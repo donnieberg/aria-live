@@ -3,6 +3,14 @@
     padding-bottom: .5rem;
 }
 
+.pam {
+    padding: 1rem;
+}
+
+.bg-white {
+    background: white;
+}
+
 .bts { 
     border-top: 1px solid #ccc;
 }
