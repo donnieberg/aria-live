@@ -24,7 +24,6 @@ export default class Container extends LightningElement {
 
     addToQueue(e) {
         this.determineType(e.detail.type).push(e.detail.message);
-        console.log(e.detail.type)
     }  // End addToQueue
 
     @api
@@ -37,7 +36,7 @@ export default class Container extends LightningElement {
            }  // End if current value hasn't updated
            return this.assertive[this.assertive.length - 1];
         } else {
-            return "None";
+            return "";
         }
     } // End showAssertiveLatestMessage
 
@@ -46,7 +45,7 @@ export default class Container extends LightningElement {
         if(this.alert.length > 0) {
            return this.alert[this.alert.length - 1];
         } else {
-            return "None";
+            return "";
         }
     } // End showAlertLatestMessage
 
@@ -55,7 +54,7 @@ export default class Container extends LightningElement {
         if(this.status.length > 0) {
            return this.status[this.status.length - 1];
         } else {
-            return "None";
+            return "";
         }
     } // End showStatusLatestMessage
 
@@ -64,7 +63,7 @@ export default class Container extends LightningElement {
         if(this.polite.length > 0) {
            return this.polite[this.polite.length - 1];
         } else {
-            return "None";
+            return "";
         }
     } // End showPoliteLatestMessage
 }

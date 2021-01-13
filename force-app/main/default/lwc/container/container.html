@@ -2,30 +2,31 @@
     <div class="bg-white pam container">
         <h1>Container Heading</h1>
         <c-input onlimit={addToQueue}></c-input>
+        <c-polite onpolite={addToQueue}></c-polite>
     
         <h2 class="pvs bts">Live Regions</h2>
-        <table class="slds-table slds-table_cell-buffer slds-table_bordered  slds-table_col-bordered table-custom">
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered  slds-table_col-bordered table-custom slds-table_fixed-layout">
             <thead>
                 <tr>
                     <th>Assertive</th>
-                    <th>Alert</th>
-                    <th>Status</th>
                     <th>Polite</th>
+                    <th>Status</th>
+                    <th>Alert</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>
+                    <td class="slds-cell-wrap">
                         <span aria-live="assertive" aria-atomic="true">{showAssertiveLatestMessage}</span>
                     </td>
-                    <td>
-                        <span role="alert">{showAlertLatestMessage}</span>
+                    <td class="slds-cell-wrap">
+                        <span role="alert">{showPoliteLatestMessage}</span>
                     </td>
-                    <td>
+                    <td class="slds-cell-wrap">
                         <span role="status">{showStatusLatestMessage}</span> 
                     </td>
-                    <td>
-                        <span aria-live="polite">{showPoliteLatestMessage}</span>   
+                    <td class="slds-cell-wrap">
+                        <span aria-live="polite">{showAlertLatestMessage}</span>   
                     </td>
                 </tr>
             </tbody>
