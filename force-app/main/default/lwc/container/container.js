@@ -1,66 +1,65 @@
-import { LightningElement, api } from 'lwc';
+import { LightningElement, api, track } from 'lwc';
 
 export default class Container extends LightningElement {
-    assertiveQueue = [];
-    alertQueue = [];
-    statusQueue = [];
-    politeQueue = [];
-
-    // speechQueues = [
-    //     {
-    //         liveRegion: 'alert',
-    //         queue: []
-    //     },
-    //     {
-    //         liveRegion: 'status',
-    //         queue: []
-    //     },
-    //     {
-    //         liveRegion: 'assertive',
-    //         queue: []
-    //     },
-    //     {
-    //         liveRegion: 'polite',
-    //         queue: []
-    //     }
-    // ];
-
-    // connectedCallback() {
-    //     this.speechQueues.push({
-    //       queue: [],
-    //       liveRegion: 'alertRegion'
-    //     });
-    //     this.speechQueues.push({
-    //       queue: [],
-    //       liveRegion: 'assertiveRegion'
-    //     });
-    //     this.speechQueues.push({
-    //       queue: [],
-    //       liveRegion: 'politeRegion'
-    //     });
-    //     this.speechQueues.push({
-    //       queue: [],
-    //       liveRegion: 'statusRegion'
-    //     });
-    // }  // End init method
+    @track assertive = [];
+    @track alert = [];
+    @track status = [];
+    @track polite = [];
 
     determineType(type) {
         switch(type) {
         case 'assertive':
-            return this.assertiveQueue;
+            return this.assertive;
             break;
         case 'polite':
-            return this.politeQueue;
+            return this.polite;
             break;
         case 'alert':
-            return this.alertQueue;
+            return this.alert;
             break;
         default:
-            return this.statusQueue;
+            return this.status;
         }  // End switch
     }  // End determineType method
 
     addToQueue(e) {
-       this.determineType(e.detail.type).push(e.detail.message);
+        this.determineType(e.detail.type).push(e.detail.message);
+        console.log(e.detail.type)
     }  // End addToQueue
+
+    @api
+    get showAssertiveLatestMessage() {
+        if(this.assertive.length > 0) {
+           return this.assertive[this.assertive.length - 1];
+        } else {
+            return "None";
+        }
+    } // End showAssertiveLatestMessage
+
+    @api
+    get showAlertLatestMessage() {
+        if(this.alert.length > 0) {
+           return this.alert[this.alert.length - 1];
+        } else {
+            return "None";
+        }
+    } // End showAlertLatestMessage
+
+    @api
+    get showStatusLatestMessage() {
+        if(this.status.length > 0) {
+           return this.status[this.status.length - 1];
+        } else {
+            return "None";
+        }
+    } // End showStatusLatestMessage
+
+    @api
+    get showPoliteLatestMessage() {
+        if(this.polite.length > 0) {
+           return this.polite[this.polite.length - 1];
+        } else {
+            return "None";
+        }
+    } // End showPoliteLatestMessage
 }

@@ -8,8 +8,7 @@ export default class Input extends LightningElement {
     changeHandler(event) {
       this.value = event.target.value;
       if(this.value.length > 5) {
-        this.limitErrorMessage = this.totalCharactersAllowed - this.value.length + ' characters remaining';
-
+        this.limitErrorMessage = this.totalCharactersAllowed - this.value.length + ' characters remaining'
         const event = new CustomEvent('limit', {
           detail: {
             id: 'test1',

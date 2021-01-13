@@ -1,12 +1,16 @@
 <template>
     <lightning-input 
+        class="input"
         label="Field Name" 
         value={value} 
         aria-described-by="errorMessage"
+        max-length="10"
         onchange={changeHandler}>
     </lightning-input>
 
-    <template if:true={limitErrorMessage}>
-        <span id="errorMessage">{limitErrorMessage}</span>
-    </template>
+    <div class="pbs errorMessage">
+        <template if:true={limitErrorMessage}>
+            <span id="errorMessage">{limitErrorMessage}</span>
+        </template>
+    </div>
 </template>
