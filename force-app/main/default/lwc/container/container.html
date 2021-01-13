@@ -1,6 +1,7 @@
 <template>
     <h1>Container Heading</h1>
     <c-input onlimit={addToQueue}></c-input>
+<<<<<<< HEAD
     <c-liveregion 
         assertive={assertiveQueue}
         alert={alertQueue}
@@ -8,4 +9,34 @@
         polite={politeQueue}
     >
     </c-liveregion>
+=======
+
+    <h2 class="pvs bts">Live Regions</h2>
+    <table class="slds-table slds-table_cell-buffer slds-table_bordered  slds-table_col-bordered table-custom">
+        <thead>
+            <tr>
+                <th>Assertive</th>
+                <th>Alert</th>
+                <th>Status</th>
+                <th>Polite</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <span aria-live="assertive">{showAssertiveLatestMessage}</span>
+                </td>
+                <td>
+                    <span role="alert">{showAlertLatestMessage}</span>
+                </td>
+                <td>
+                    <span role="status">{showStatusLatestMessage}</span> 
+                </td>
+                <td>
+                    <span aria-live="polite">{showPoliteLatestMessage}</span>   
+                </td>
+            </tr>
+        </tbody>
+    </table>
+>>>>>>> donielle
 </template>
