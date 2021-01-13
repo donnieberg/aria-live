@@ -30,6 +30,11 @@ export default class Container extends LightningElement {
     @api
     get showAssertiveLatestMessage() {
         if(this.assertive.length > 0) {
+           // Added this if statement to test if we're updating a string that is already present
+           if(this.assertive.length > 1 && this.assertive[this.assertive.length - 1] === this.assertive[this.assertive.length - 2]) {
+                // Adding a non-breaking space to the string if it is the same
+               return this.assertive[this.assertive.length - 1] += '\xa0';
+           }  // End if current value hasn't updated
            return this.assertive[this.assertive.length - 1];
         } else {
             return "None";
